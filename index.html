@@ -162,9 +162,6 @@ ol.steps span{color:var(--ink-soft);font-size:15px}
 .pslogan{font-family:'Bodoni Moda',serif;font-style:italic;color:var(--pink-ink)!important;font-size:14px!important;margin:2px 0 4px!important}
 .loc{display:block;font-size:12px;font-weight:500;color:var(--ink-soft);font-family:Inter,sans-serif;line-height:1.3}
 .partner .loc,.packprice .loc{color:#FFE3CC}
-body.loc-on .u{display:none}
-body.loc-on .loc{display:inline;font-size:inherit;font-weight:inherit;color:inherit;font-family:inherit;line-height:inherit}
-body:not(.loc-on) .loc{display:none}
 #curSel{max-width:110px}
 .packlist{margin:14px 0 0;padding-left:20px;color:#FFE3CC;display:grid;gap:6px}
 .packbuy{display:grid;gap:10px;justify-items:start}@media(min-width:760px){.packbuy{justify-items:end;text-align:right}}
@@ -827,7 +824,7 @@ const rateFor = c => c === 'USD' ? 1 : c === 'NGN' ? CFG.ngnPerUsd : (RATES && R
 function approx(usd) {
   if (curCode === 'USD') return '';
   const r = rateFor(curCode); if (!r) return '';
-  try { const v = usd * r; return new Intl.NumberFormat('en', { style: 'currency', currency: curCode, maximumFractionDigits: v >= 100 ? 0 : 2 }).format(v).replace(/NGN\s?/, '\u20a6'); } catch (e) { return ''; }
+  try { const v = usd * r; return '\u2248 ' + new Intl.NumberFormat('en', { style: 'currency', currency: curCode, maximumFractionDigits: v >= 100 ? 0 : 2 }).format(v).replace(/NGN\s?/, '\u20a6'); } catch (e) { return ''; }
 }
 const usdHTML = n => '<span class="u">' + money(n) + '</span><small class="loc" data-usd="' + n + '"></small>';
 function paintLocal() {
