@@ -392,11 +392,11 @@ body{background:#fff}
   <div class="dh"><h3 id="infoT">Your details</h3><button class="x" data-close aria-label="Close">×</button></div>
   <form id="infoForm" novalidate>
     <div class="db">
-      <div class="fld"><label for="fName">Full name</label><input id="fName" type="text" autocomplete="name" required></div>
-      <div class="fld"><label for="fEmail">Email</label><input id="fEmail" type="email" autocomplete="email" required></div>
-      <div class="fld"><label for="fWhats">WhatsApp number (with country code)</label><input id="fWhats" type="tel" autocomplete="tel" placeholder="+234 …" required></div>
+      <div class="fld"><label for="fName">Full name</label><input id="fName" type="text" maxlength="80" autocomplete="name" required></div>
+      <div class="fld"><label for="fEmail">Email</label><input id="fEmail" type="email" maxlength="120" autocomplete="email" required></div>
+      <div class="fld"><label for="fWhats">WhatsApp number (with country code)</label><input id="fWhats" type="tel" maxlength="25" autocomplete="tel" placeholder="+234 …" required></div>
       <div class="fld"><label for="fCountry">Country</label><select id="fCountry" autocomplete="country-name" required></select></div>
-      <div class="fld"><label for="fAddr">Delivery address</label><textarea id="fAddr" autocomplete="street-address" required></textarea></div>
+      <div class="fld"><label for="fAddr">Delivery address</label><textarea id="fAddr" maxlength="300" autocomplete="street-address" required></textarea></div>
       <div class="fld"><label style="display:flex;gap:10px;align-items:flex-start;font-weight:500"><input type="checkbox" id="fTerms" required style="width:22px;height:22px;margin-top:2px"> <span>I agree to the <a href="#" data-terms>order terms</a> and understand my order is made after I pay, with delivery estimated for December 2026.</span></label></div>
       <p class="note" id="infoErr" role="alert"></p>
     </div>
